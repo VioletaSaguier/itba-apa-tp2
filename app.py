@@ -5,8 +5,12 @@ from sklearn.metrics.pairwise import linear_kernel
 
 # Cargar los datos
 # Asegúrate de que la ruta al archivo CSV sea accesible por tu aplicación Streamlit
-df = pd.read_csv('/ruta/al/dataset.csv')
 
+# URL del archivo CSV en formato raw desde GitHub
+url = 'https://raw.githubusercontent.com/VioletaSaguier/itba-apa-tp2/main/basemodif.csv'
+
+# Cargar los datos desde GitHub
+df = pd.read_csv(url)
 # Preprocesamiento de datos (aquí deberías agregar tu lógica de preprocesamiento)
 # Por ejemplo, combinar características relevantes en una columna 'combined_features'
 df['combined_features'] = df.apply(lambda x: f"{x['age']} {x['race']} {x['gender']}", axis=1)
