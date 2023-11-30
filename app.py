@@ -38,13 +38,11 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
 import streamlit as st
 
 # Custom CSS
-import streamlit as st
-
 st.markdown(
     """
     <style>
     .title {
-        color: pink; /* Updated color to pink */
+        color: #fb6f92;
         font-size: 30px;
         text-align: center;
         padding-top: 50px;
@@ -52,9 +50,6 @@ st.markdown(
     }
 
     body {
-        background-image: url('https://emojicombos.com/wp-content/uploads/2020/04/hearts100.png'); /* Added hearts background image */
-        background-repeat: repeat;
-        background-size: contain;
         background-color: #f5f5f5;
     }
     </style>
@@ -62,20 +57,11 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Rest of the code remains the same
+# Title and page color
 st.markdown("<h1 class='title'>Sistema de Recomendación de Citas</h1>", unsafe_allow_html=True)
 st.markdown("<div style='background-color: white; padding: 20px;'>", unsafe_allow_html=True)
 
-with st.form("my_form"):
-    age = st.number_input('Edad', min_value=18, max_value=100, step=1)
-    gender = st.selectbox('Género', ['Hombre', 'Mujer', 'Otro'])
-    race = st.selectbox('Raza', ['Raza 1', 'Raza 2', 'Raza 3'])  # Ajusta las opciones según tus datos
+# Rest of the code for the form and recommendations
 
-    submitted = st.form_submit_button("Obtener Recomendaciones")
-    if submitted:
-        user_profile = f"{age} {race} {gender}"
-        recommendations = get_recommendations(user_profile, tfidf_matrix, cosine_sim)
-        st.write("Recomendaciones:", recommendations)
-        
+# Close the div tag
 st.markdown("</div>", unsafe_allow_html=True)
-
