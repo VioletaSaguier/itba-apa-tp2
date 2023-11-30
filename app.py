@@ -35,7 +35,7 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
     #return df['iid'].iloc[top_user_indices]
     usuarios_similares = df.iloc[top_user_indices]
 
-    columnas_deseadas = ['pid','match', 'age','age_o','race', 'race_o', 'samerace']
+    columnas_deseadas = ['pid','age_o', 'race_o']
 
     # Seleccionar solo las columnas deseadas del DataFrame
     usuarios_seleccionados = usuarios_similares[columnas_deseadas]
