@@ -67,6 +67,5 @@ with st.form("my_form"):
         user_profile = f"{age} {race} {gender}"
         recommendations = get_recommendations(user_profile, tfidf_matrix, cosine_sim)
         st.write("Recomendaciones:", recommendations)
-        st.write(type(recommendations))
 
 
