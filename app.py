@@ -42,7 +42,7 @@ st.markdown(
     """
     <style>
     .title {
-        color: #fb6f92;
+        color: #ff9800;
         font-size: 30px;
         text-align: center;
         padding-top: 50px;
@@ -58,7 +58,7 @@ st.markdown(
 )
 
 # Title and page color
-st.markdown("<h1 class='title'>Recomendación de Citas</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='title'>Citas</h1>", unsafe_allow_html=True)
 st.markdown("<div style='background-color: white; padding: 20px;'>", unsafe_allow_html=True)
 
 # Rest of the code for the form and recommendations
