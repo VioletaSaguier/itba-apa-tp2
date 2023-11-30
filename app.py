@@ -64,5 +64,6 @@ with st.form("my_form"):
         user_profile = f"{age} {race} {gender}"
         recommendations = get_recommendations(user_profile, tfidf_matrix, cosine_sim)
         st.write("Recomendaciones:", recommendations)
-        st.write("Recomendaciones (Mostrando solo 2 filas):")
-        st.write(recommendations.head(2).to_markdown(index=False))
+        st.write(type(recommendations))
+
+
