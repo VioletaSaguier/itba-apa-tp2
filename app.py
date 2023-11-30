@@ -49,7 +49,7 @@ st.markdown("### y otros por si no funciona 🤭")
 with st.form("my_form"):
     age = st.number_input('Edad', min_value=18, max_value=100, step=1)
     gender = st.selectbox('Género', ['Hombre', 'Mujer', 'Otro'])
-     race_options = {
+    race_options = {
         1: 'Black/African American',
         2: 'European/Caucasian-American',
         3: 'Latino/Hispanic American',
