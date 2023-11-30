@@ -35,22 +35,9 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
     return df['iid'].iloc[top_user_indices]
 
 # Interfaz de usuario en Streamlit
-# Custom CSS
 st.markdown(
     """
-    <style>
-    .title {
-        color: #ff9800;
-        font-size: 50px;
-        text-align: center;
-        padding-top: 50px;
-        padding-bottom: 30px;
-    }
-
-    body {
-        background-color: #f5f5f5;
-    }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     """,
     unsafe_allow_html=True
 )
