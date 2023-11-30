@@ -49,7 +49,15 @@ st.markdown("### y otros por si no funciona 🤭")
 with st.form("my_form"):
     age = st.number_input('Edad', min_value=18, max_value=100, step=1)
     gender = st.selectbox('Género', ['Hombre', 'Mujer', 'Otro'])
-    race = st.selectbox('Raza', ['Black/African American', 'European/Caucasian-American', 'Latino/Hispanic American'])  # Ajusta las opciones según tus datos
+     race_options = {
+        1: 'Black/African American',
+        2: 'European/Caucasian-American',
+        3: 'Latino/Hispanic American',
+        4: 'Asian/Pacific Islander/Asian-American',
+        5: 'Native American',
+        6: 'Other'
+    }
+    race = st.selectbox('Raza', list(race_options.values()))
     
     submitted = st.form_submit_button("Obtener Recomendaciones")
     if submitted:
