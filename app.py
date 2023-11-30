@@ -40,8 +40,7 @@ st.title('Citas')
 
 with st.form("my_form"):
     age = st.number_input('Edad', min_value=18, max_value=100, step=1)
-    #gender = st.selectbox('Género', ['Hombre', 'Mujer', 'Otro'])
-    gender = st.selectbox('G', ['Hom', 'Mu', 'Otro'])
+    gender = st.selectbox('Género', ['Hombre', 'Mujer', 'Otro'])
     race = st.selectbox('Raza', ['Raza 1', 'Raza 2', 'Raza 3'])  # Ajusta las opciones según tus datos
 
     submitted = st.form_submit_button("Obtener Recomendaciones")
