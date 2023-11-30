@@ -38,11 +38,13 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
 import streamlit as st
 
 # Custom CSS
+import streamlit as st
+
 st.markdown(
     """
     <style>
     .title {
-        color: #ff9800;
+        color: pink; /* Updated color to pink */
         font-size: 30px;
         text-align: center;
         padding-top: 50px;
@@ -50,6 +52,9 @@ st.markdown(
     }
 
     body {
+        background-image: url('https://emojicombos.com/wp-content/uploads/2020/04/hearts100.png'); /* Added hearts background image */
+        background-repeat: repeat;
+        background-size: contain;
         background-color: #f5f5f5;
     }
     </style>
@@ -57,11 +62,10 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# Title and page color
+# Rest of the code remains the same
 st.markdown("<h1 class='title'>Sistema de Recomendación de Citas</h1>", unsafe_allow_html=True)
 st.markdown("<div style='background-color: white; padding: 20px;'>", unsafe_allow_html=True)
 
-# Rest of the code for the form and recommendations
 with st.form("my_form"):
     age = st.number_input('Edad', min_value=18, max_value=100, step=1)
     gender = st.selectbox('Género', ['Hombre', 'Mujer', 'Otro'])
@@ -73,5 +77,5 @@ with st.form("my_form"):
         recommendations = get_recommendations(user_profile, tfidf_matrix, cosine_sim)
         st.write("Recomendaciones:", recommendations)
         
-# Close the div tag
 st.markdown("</div>", unsafe_allow_html=True)
+
