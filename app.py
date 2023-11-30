@@ -35,8 +35,28 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
     return df['iid'].iloc[top_user_indices]
 
 # Interfaz de usuario en Streamlit
-import streamlit as st
-st.title('🩷 El amor de tu vida y otros por si no funciona 🩷')
+# Custom CSS
+st.markdown(
+    """
+    <style>
+    .title {
+        color: #ff9800;
+        font-size: 30px;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+
+    body {
+        background-color: #f5f5f5;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# Title and page color
+st.markdown("<h1 class='title'>🩷Citas</h1>", unsafe_allow_html=True)
 
 with st.form("my_form"):
     age = st.number_input('Edad', min_value=18, max_value=100, step=1)
