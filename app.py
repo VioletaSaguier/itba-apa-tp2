@@ -36,32 +36,8 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
 
 # Interfaz de usuario en Streamlit
 import streamlit as st
+st.title('Sistema de Recomendación de Citas')
 
-# Custom CSS
-st.markdown(
-    """
-    <style>
-    .title {
-        color: #ff9800;
-        font-size: 30px;
-        text-align: center;
-        padding-top: 50px;
-        padding-bottom: 30px;
-    }
-
-    body {
-        background-color: #f5f5f5;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-# Title and page color
-st.markdown("<h1 class='title'>Citas</h1>", unsafe_allow_html=True)
-st.markdown("<div style='background-color: white; padding: 20px;'>", unsafe_allow_html=True)
-
-# Rest of the code for the form and recommendations
 with st.form("my_form"):
     age = st.number_input('Edad', min_value=18, max_value=100, step=1)
     gender = st.selectbox('Género', ['Hombre', 'Mujer', 'Otro'])
@@ -72,6 +48,3 @@ with st.form("my_form"):
         user_profile = f"{age} {race} {gender}"
         recommendations = get_recommendations(user_profile, tfidf_matrix, cosine_sim)
         st.write("Recomendaciones:", recommendations)
-        
-# Close the div tag
-st.markdown("</div>", unsafe_allow_html=True)
