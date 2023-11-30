@@ -40,7 +40,7 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
     # Seleccionar solo las columnas deseadas del DataFrame
     usuarios_seleccionados = usuarios_similares[columnas_deseadas]
 
-    return usuarios_similares
+    return usuarios_seleccionados
 
 # Interfaz de usuario en Streamlit
 st.markdown(
