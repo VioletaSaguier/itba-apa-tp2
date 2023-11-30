@@ -31,8 +31,9 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
     # Obtener los índices de los usuarios más similares
     top_user_indices = sim_scores.argsort()[-10:][::-1]  # Top 10 usuarios similares
 
-    # Devolver las recomendaciones
-    return df['iid'].iloc[top_user_indices]
+    # Devolver un DataFrame con todas las columnas relevantes
+    recommendations = df.iloc[top_user_indices][['iid', 'age', 'gender', 'race', 'age_o', 'gender_o']]
+    return recommendations
 
 # Interfaz de usuario en Streamlit
 st.markdown(
@@ -63,4 +64,5 @@ with st.form("my_form"):
     if submitted:
         user_profile = f"{age} {race} {gender}"
         recommendations = get_recommendations(user_profile, tfidf_matrix, cosine_sim)
-        st.write("Recomendaciones:", recommendations)
+        st.write("Recomendaciones:")
+        st.write(recommendations)
