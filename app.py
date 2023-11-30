@@ -36,7 +36,7 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
 
 # Interfaz de usuario en Streamlit
 import streamlit as st
-st.title('Te recomendamos a los amores de tu vida <3')
+st.title('🩷 El amor de tu vida y otros por si no funciona 🩷')
 
 with st.form("my_form"):
     age = st.number_input('Edad', min_value=18, max_value=100, step=1)
