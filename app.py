@@ -41,7 +41,7 @@ st.markdown(
     <style>
     .title {
         color: #ff9800;
-        font-size: 30px;
+        font-size: 50px;
         text-align: center;
         padding-top: 50px;
         padding-bottom: 30px;
@@ -56,7 +56,8 @@ st.markdown(
 )
 
 # Title and page color
-st.markdown("<h1 class='title'>🩷Citas</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='title'>🩷El amor de tu vida🩷</h1>", unsafe_allow_html=True)
+st.markdown("### y otros por si no funciona 🤭")
 
 with st.form("my_form"):
     age = st.number_input('Edad', min_value=18, max_value=100, step=1)
