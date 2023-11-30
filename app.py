@@ -35,6 +35,11 @@ def get_recommendations(new_user_profile, tfidf_matrix, cosine_sim):
     #return df['iid'].iloc[top_user_indices]
     usuarios_similares = df.iloc[top_user_indices]
 
+    columnas_deseadas = ['age', 'race']
+
+    # Seleccionar solo las columnas deseadas del DataFrame
+    usuarios_seleccionados = usuarios_similares[columnas_deseadas]
+
     return usuarios_similares
 
 # Interfaz de usuario en Streamlit
