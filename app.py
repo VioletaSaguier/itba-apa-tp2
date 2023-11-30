@@ -51,8 +51,10 @@ with st.form("my_form"):
     gender = st.selectbox('Género', ['Hombre', 'Mujer', 'Otro'])
     race = st.selectbox('Raza', ['Raza 1', 'Raza 2', 'Raza 3'])  # Ajusta las opciones según tus datos
 
-    submitted = st.form_submit_button("Obtener Recomendaciones")
-    if submitted:
-        user_profile = f"{age} {race} {gender}"
-        recommendations = get_recommendations(user_profile, tfidf_matrix, cosine_sim)
-        st.write("Recomendaciones:", recommendations)
+submitted = st.form_submit_button("Obtener Recomendaciones")
+if submitted:
+    age_o = data['age_o']
+    race_o = data['race_o']
+    user_profile = f"{age} {race} {gender} {age_o} {race_o}"
+    recommendations = get_recommendations(user_profile, tfidf_matrix, cosine_sim)
+    st.write("Recomendaciones:", recommendations)
